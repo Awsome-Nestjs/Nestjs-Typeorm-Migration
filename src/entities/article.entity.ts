@@ -13,10 +13,10 @@ export class Article extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: number;
 
-  @Column({ length: 500 })
+  @Column({ length: 500, nullable: false })
   title: string;
 
-  @Column('text')
+  @Column({ type: 'text', nullable: false })
   description: string;
 
   @ManyToOne(() => User, (user) => user.articles)
@@ -28,6 +28,6 @@ export class Article extends BaseEntity {
   @Column({ default: Status.Pending })
   status: number;
 
-  @Column('text')
+  @Column({ type: 'text', nullable: false })
   content: string;
 }

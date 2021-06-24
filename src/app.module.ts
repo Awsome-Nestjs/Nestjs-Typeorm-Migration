@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import configuration from './config/configuration';
 import { join } from 'path';
+import { ArticlesModule } from './articles/articles.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { join } from 'path';
       autoLoadEntities: true,
     }),
     UsersModule,
+    ArticlesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
